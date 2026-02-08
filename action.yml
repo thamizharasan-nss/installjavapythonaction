@@ -1,6 +1,12 @@
 name: install python and java
 description: Install Java using Temurin
 
+inputs:
+  javaversion:
+    default: "21"
+    description: Java version used in composite
+    required: true
+    
 runs:
   using: composite
   steps:
@@ -8,7 +14,7 @@ runs:
       uses: actions/setup-java@v5
       with:
         distribution: temurin
-        java-version: "21"
+        java-version: ${{ inputs.javaversion }}
     - name: Install python
       uses: actions/setup-python@v6
       with:
