@@ -1,0 +1,17 @@
+name: install python and java
+description: Install Java using Temurin
+
+runs:
+  using: composite
+  steps:
+    - name: Install Java
+      uses: actions/setup-java@v5
+      with:
+        distribution: temurin
+        java-version: "21"
+    - name: Install python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.13' 
+
+        
