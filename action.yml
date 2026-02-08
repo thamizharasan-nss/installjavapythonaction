@@ -6,6 +6,10 @@ inputs:
     default: "21"
     description: Java version used in composite
     required: true
+outputs:
+  branchname:
+    description: out of barnch name 
+    value: ${{ steps.dummy.outputs.branch }}
     
 runs:
   using: composite
@@ -18,6 +22,11 @@ runs:
     - name: Install python
       uses: actions/setup-python@v6
       with:
-        python-version: '3.13' 
+        python-version: '3.13'
+
+    - name: variable used 
+      id: dummy
+      run: echo "branch=main" >> $GITHUB_OUTPUT
+      shell: bash
 
         
