@@ -1,0 +1,6 @@
+name:  using the docker action 
+description: 'Greet someone and record the time'
+
+runs:
+   using: docker
+   image: nginx:latest
